@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="AddContactValidationForm" type="org.lip6.struts.actionForm.AddContactValidationForm"/>
+		<form-bean name="AddAddressValidationForm" type="org.lip6.struts.actionForm.AddAddressValidationForm"/>
+		<form-bean name="AddTelephoneValidationForm" type="org.lip6.struts.actionForm.AddTelephoneValidationForm"/>
+		<form-bean name="AddGroupValidationForm" type="org.lip6.struts.actionForm.AddGroupValidationForm"/>
+		<form-bean name="AddContactToGroupValidationForm" type="org.lip6.struts.actionForm.AddContactToGroupValidationForm"/>
+		<form-bean name="DeleteContactValidationForm" type="org.lip6.struts.actionForm.DeleteContactValidationForm"/>
+		<form-bean name="DeletePhoneValidationForm" type="org.lip6.struts.actionForm.DeletePhoneValidationForm"/>
+		<form-bean name="DeleteAddressValidationForm" type="org.lip6.struts.actionForm.DeleteAddressValidationForm"/>
+		<form-bean name="DeleteGroupValidationForm" type="org.lip6.struts.actionForm.DeleteGroupValidationForm"/>
+		<form-bean name="DeleteContactFromGroupValidationForm" type="org.lip6.struts.actionForm.DeleteContactFromGroupValidationForm"/>
+		<form-bean name="SearchAddressValidationForm" type="org.lip6.struts.actionForm.SearchAddressValidationForm"/>
+		<form-bean name="SearchContactValidationForm" type="org.lip6.struts.actionForm.SearchContactValidationForm"/>
+		<form-bean name="SearchPhoneValidationForm" type="org.lip6.struts.actionForm.SearchPhoneValidationForm"/>
+		<form-bean name="ModifyPhoneValidationForm" type="org.lip6.struts.actionForm.ModifyPhoneValidationForm"/>
+		<form-bean name="ModifyAddressValidationForm" type="org.lip6.struts.actionForm.ModifyAddressValidationForm"/>
+		<form-bean name="ModifyContactValidationForm" type="org.lip6.struts.actionForm.ModifyContactValidationForm"/>
+		<form-bean name="ModifyGroupValidationForm" type="org.lip6.struts.actionForm.ModifyGroupValidationForm"/>
+		
+	</form-beans>
+	
+	
+	<action-mappings>
+		<action path="/ContactCreation" forward="/pages/creationContact.jsp" />
+		<action path="/AddInfoContact" forward="/pages/addinfocontact.jsp"/>
+		<action path="/AddAdress" forward="/pages/addAdress.jsp"/>
+		<action path="/AddTelephone" forward="/pages/addTelephone.jsp"/>
+		<action path="/AddGroupe" forward="/pages/addGroupe.jsp"/>
+		<action path="/AddContactToGroupe" forward="/pages/addContacttoGroupe.jsp"/>
+		<action path="/DeleteContact" forward="/pages/deleteContact.jsp"/>
+		<action path="/DeleteAddress" forward="/pages/deleteAddress.jsp"/>
+		<action path="/DeletePhone" forward="/pages/deletePhone.jsp"/>
+		<action path="/DeleteGroup" forward="/pages/deleteGroup.jsp"/>
+		<action path="/DeleteContactFromGroup" forward="/pages/deleteContactFromGroup.jsp"/>
+		<action path="/SearchAddress" forward="/pages/searchAddress.jsp"/>
+		<action path="/SearchContact" forward="/pages/searchAction.jsp"/>
+		<action path="/SearchPhone" forward="/pages/searchPhone.jsp"/>
+		<action path="/ModifyAddress" forward="/pages/modifyAddress.jsp"/>
+		<action path="/ModifyPhone" forward="/pages/modifyPhone.jsp"/>
+		<action path="/ModifyGroup" forward="/pages/modifyGroup.jsp"/>
+		<action path="/ModifyContact" forward="/pages/modifyContact.jsp"/>
+		
+		
+		
+		
+		<action path="/AddContact"
+		type="org.lip6.struts.servletAction.AddContactAction"
+		name="AddContactValidationForm" scope="request"
+		input="/pages/creationContact.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+		
+		<action path="/AddAddress"
+		type="org.lip6.struts.servletAction.AddAddressAction"
+		name="AddAddressValidationForm" scope="request"
+		input="/pages/addAdress.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+		
+		<action path="/AddTelephone"
+		type="org.lip6.struts.servletAction.AddTelephoneAction"
+		name="AddTelephoneValidationForm" scope="request"
+		input="/pages/addTelephone.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+		
+		<action path="/AddGroupe"
+		type="org.lip6.struts.servletAction.AddGroupeAction"
+		name="AddGroupValidationForm" scope="request"
+		input="/pages/addGroupe.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+		
+		<action path="/AddContactToGroupe"
+		type="org.lip6.struts.servletAction.AddContactToGroupAction"
+		name="AddContactToGroupValidationForm" scope="request"
+		input="/pages//addContacttoGroupe.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+		
+		<action path="/DeleteContact"
+		type="org.lip6.struts.servletAction.DeleteContactAction"
+		name="DeleteContactValidationForm" scope="request"
+		input="/pages/deleteContact.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+		
+		<action path="/DeleteAddress"
+		type="org.lip6.struts.servletAction.DeleteAddressAction"
+		name="DeleteAddressValidationForm" scope="request"
+		input="/pages/deleteAddress.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+		
+		<action path="/DeletePhone"
+		type="org.lip6.struts.servletAction.DeletePhoneAction"
+		name="DeletePhoneValidationForm" scope="request"
+		input="/pages/deletePhone.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+		
+		<action path="/DeleteGroup"
+		type="org.lip6.struts.servletAction.DeleteGroupAction"
+		name="DeleteGroupValidationForm" scope="request"
+		input="/pages/deleteGroup.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+		
+ 		<action path="/DeleteContactFromGroup"
+		type="org.lip6.struts.servletAction.DeleteContactFromGroupAction"
+		name="DeleteContactFromGroupValidationForm" scope="request"
+		input="/pages/deleteContactFromGroup.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+		
+ 		<action path="/SearchAddress"
+		type="org.lip6.struts.servletAction.SearchAddressAction"
+		name="SearchAddressValidationForm" scope="request"
+		input="/pages/searchAddress.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+
+ 		<action path="/SearchContact"
+		type="org.lip6.struts.servletAction.SearchContactAction"
+		name="SearchContactValidationForm" scope="request"
+		input="/pages/searchContact.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+
+ 		<action path="/SearchPhone"
+		type="org.lip6.struts.servletAction.SearchPhoneAction"
+		name="SearchPhoneValidationForm" scope="request"
+		input="/pages/searchPhone.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+
+ 		<action path="/ModifyAddress"
+		type="org.lip6.struts.servletAction.ModifyAddressAction"
+		name="ModifyAddressValidationForm" scope="request"
+		input="/pages/modifyAddress.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+
+ 		<action path="/ModifyContact"
+		type="org.lip6.struts.servletAction.ModifyContactAction"
+		name="ModifyContactValidationForm" scope="request"
+		input="/pages/modifyContact.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+
+ 		<action path="/ModifyGroup"
+		type="org.lip6.struts.servletAction.ModifyGroupAction"
+		name="ModifyGroupValidationForm" scope="request"
+		input="/pages/modifyGroup.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+		
+ 		<action path="/ModifyPhone"
+		type="org.lip6.struts.servletAction.ModifyPhoneAction"
+		name="ModifyPhoneValidationForm" scope="request"
+		input="/pages/modifyPhone.jsp">
+		<forward name="success" path="/pages/success.jsp" />
+		<forward name="error" path="/pages/error.jsp" />
+		</action>
+
+		
+		
+	</action-mappings>
+	<!-- ========== Ressources de definitions de messages
+	=========================== -->
+	<message-resources parameter="Resources" />
+	
+</struts-config>
