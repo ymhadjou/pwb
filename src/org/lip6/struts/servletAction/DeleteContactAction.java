@@ -14,6 +14,7 @@ import org.apache.struts.action.ActionMapping;
 import org.lip6.struts.actionForm.AddContactValidationForm;
 import org.lip6.struts.actionForm.DeleteContactValidationForm;
 import org.lip6.struts.domain.DAOContact;
+import org.lip6.struts.services.ContactService;
 
 /**
  * Servlet implementation class DeleteContactAction
@@ -29,9 +30,9 @@ public class DeleteContactAction extends Action {
 
 			
 			//create a new Contact
-			final DAOContact lDAOContact = new DAOContact();
+			ContactService cs = new ContactService();
 			
-			final String lError = lDAOContact.deleteContact(id);
+			final String lError = cs.deleteContact(id);
 			
 			if(lError == null) {
 				//if no exception is raised, forward "success"

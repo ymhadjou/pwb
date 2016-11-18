@@ -11,6 +11,7 @@ import org.apache.struts.action.ActionMapping;
 import org.lip6.struts.actionForm.AddGroupValidationForm;
 import org.lip6.struts.actionForm.ModifyGroupValidationForm;
 import org.lip6.struts.domain.DAOGroupe;
+import org.lip6.struts.services.GroupeService;
 
 /**
  * Servlet implementation class ModifyGroupAction
@@ -28,9 +29,9 @@ public class ModifyGroupAction extends Action {
 		final String nomGroupe = lForm.getNomGroupe();
 
 		//create a new Contact
-		final DAOGroupe lDAOContact = new DAOGroupe();
+		final GroupeService cs = new GroupeService();
 		
-		final String lError = lDAOContact.ModifyGroupDAO(id, nomGroupe);
+		final String lError = cs.modifyGroup(id, nomGroupe);
 		
 		if(lError == null) {
 			//if no exception is raised, forward "success"

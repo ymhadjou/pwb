@@ -14,6 +14,7 @@ import org.apache.struts.action.ActionMapping;
 import org.lip6.struts.actionForm.AddAddressValidationForm;
 import org.lip6.struts.actionForm.ModifyAddressValidationForm;
 import org.lip6.struts.domain.DAOAddress;
+import org.lip6.struts.services.AdresseService;
 
 /**
  * Servlet implementation class ModifyAddressAction
@@ -38,9 +39,9 @@ public class ModifyAddressAction extends Action {
 		final String country = lForm.getCountry();
 		
 		//create a new Contact
-		final DAOAddress lDAOContact = new DAOAddress();
+		final AdresseService cs = new AdresseService();
 		
-		final String lError = lDAOContact.ModifyAddressDAO(street, city, zip, country, id);
+		final String lError = cs.modifyAddress(street, city, zip, country, id);
 		
 		if(lError == null) {
 			//if no exception is raised, forward "success"

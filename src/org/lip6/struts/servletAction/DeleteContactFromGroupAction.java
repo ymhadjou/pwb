@@ -17,6 +17,7 @@ import org.apache.struts.action.ActionMapping;
 import org.lip6.struts.actionForm.DeleteContactFromGroupValidationForm;
 import org.lip6.struts.actionForm.DeleteGroupValidationForm;
 import org.lip6.struts.domain.DAOGroupe;
+import org.lip6.struts.services.GroupeService;
 
 /**
  * Servlet implementation class DeleteContactFromGroupAction
@@ -33,9 +34,9 @@ public class DeleteContactFromGroupAction extends Action  {
 
 			
 			//create a new Contact
-			final DAOGroupe lDAOContact = new DAOGroupe();
+			final GroupeService cs = new GroupeService();
 			
-			final String lError = lDAOContact.DeleteContactFromGroupDAO(id, idGroup);
+			final String lError = cs.deleteContactFromGroup(id, idGroup);
 			
 			if(lError == null) {
 				//if no exception is raised, forward "success"

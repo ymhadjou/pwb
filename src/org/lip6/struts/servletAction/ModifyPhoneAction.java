@@ -14,6 +14,7 @@ import org.apache.struts.action.ActionMapping;
 import org.lip6.struts.actionForm.AddTelephoneValidationForm;
 import org.lip6.struts.actionForm.ModifyPhoneValidationForm;
 import org.lip6.struts.domain.DAOTelephone;
+import org.lip6.struts.services.PhoneService;
 
 /**
  * Servlet implementation class ModifyPhoneAction
@@ -31,9 +32,9 @@ public class ModifyPhoneAction extends Action {
 		final String numTel = lForm.getNumTelephone();
 
 		//create a new Contact
-		final DAOTelephone lDAOContact = new DAOTelephone();
+		final PhoneService cs = new PhoneService();
 		
-		final String lError = lDAOContact.ModifyPhoneDAO(typeTel, numTel, id);
+		final String lError = cs.modifyPhone(typeTel, numTel, id);
 		
 		if(lError == null) {
 			//if no exception is raised, forward "success"

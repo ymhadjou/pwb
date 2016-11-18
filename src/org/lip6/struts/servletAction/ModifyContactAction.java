@@ -14,6 +14,7 @@ import org.apache.struts.action.ActionMapping;
 import org.lip6.struts.actionForm.AddContactValidationForm;
 import org.lip6.struts.actionForm.ModifyContactValidationForm;
 import org.lip6.struts.domain.DAOContact;
+import org.lip6.struts.services.ContactService;
 
 /**
  * Servlet implementation class ModifyContactAction
@@ -31,9 +32,9 @@ public class ModifyContactAction extends Action {
 				final String email = lForm.getEmail();
 				
 				//create a new Contact
-				final DAOContact lDAOContact = new DAOContact();
+				ContactService cs = new ContactService();
 				
-				final String lError = lDAOContact.updateContact(id, lastName, firstName, email);
+				final String lError = cs.modifyContact(id, lastName, firstName, email);
 				
 				if(lError == null) {
 				//if no exception is raised, forward "success"

@@ -15,6 +15,7 @@ import org.lip6.struts.actionForm.AddAddressValidationForm;
 import org.lip6.struts.actionForm.AddContactValidationForm;
 import org.lip6.struts.domain.DAOAddress;
 import org.lip6.struts.domain.DAOContact;
+import org.lip6.struts.services.AdresseService;
 
 /**
  * Servlet implementation class AddAddressAction
@@ -39,9 +40,9 @@ public class AddAddressAction extends Action {
 		final String country = lForm.getCountry();
 		
 		//create a new Contact
-		final DAOAddress lDAOContact = new DAOAddress();
+		final AdresseService cs = new AdresseService();
 		
-		final String lError = lDAOContact.CreateAddressDAO(street, city, zip, country, id);
+		final String lError = cs.addAdress(street, city, zip, country, id);
 		
 		if(lError == null) {
 			//if no exception is raised, forward "success"

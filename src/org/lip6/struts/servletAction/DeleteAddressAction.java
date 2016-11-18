@@ -15,6 +15,7 @@ import org.lip6.struts.actionForm.DeleteAddressValidationForm;
 import org.lip6.struts.actionForm.DeleteContactValidationForm;
 import org.lip6.struts.domain.DAOAddress;
 import org.lip6.struts.domain.DAOContact;
+import org.lip6.struts.services.AdresseService;
 
 /**
  * Servlet implementation class DeleteAddressAction
@@ -31,9 +32,9 @@ public class DeleteAddressAction extends Action {
 
 			
 			//create a new Contact
-			final DAOAddress lDAOContact = new DAOAddress();
+			final AdresseService cs = new AdresseService();
 			
-			final String lError = lDAOContact.DeleteAddressDAO(id);
+			final String lError = cs.deleteAddress(id);
 			
 			if(lError == null) {
 				//if no exception is raised, forward "success"

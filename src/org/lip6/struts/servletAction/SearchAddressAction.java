@@ -12,6 +12,7 @@ import org.lip6.struts.actionForm.DeleteGroupValidationForm;
 import org.lip6.struts.actionForm.SearchAddressValidationForm;
 import org.lip6.struts.domain.DAOAddress;
 import org.lip6.struts.domain.DAOGroupe;
+import org.lip6.struts.services.AdresseService;
 
 /**
  * Servlet implementation class SearchAddressAction
@@ -28,9 +29,9 @@ public class SearchAddressAction extends Action {
 
 			
 			//create a new Contact
-			final DAOAddress lDAOContact = new DAOAddress();
+			final AdresseService cs = new AdresseService();
 			
-			final String lError = lDAOContact.FetchAddressDAO(id);
+			final String lError = cs.getAddressForAContact(id);
 			
 			if(lError == null) {
 				//if no exception is raised, forward "success"

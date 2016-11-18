@@ -2,6 +2,7 @@ package org.lip6.struts.servletAction;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.apache.struts.Globals;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -11,6 +12,7 @@ import org.apache.struts.action.ActionMessage;
 import org.apache.struts.action.ActionMessages;
 import org.lip6.struts.actionForm.AddContactValidationForm;
 import org.lip6.struts.domain.DAOContact;
+import org.lip6.struts.services.ContactService;
 public class AddContactAction extends Action {
 	
 	public ActionForward execute(final ActionMapping pMapping, ActionForm pForm, final HttpServletRequest pRequest,
@@ -24,9 +26,10 @@ public class AddContactAction extends Action {
 		final String email = lForm.getEmail();
 		
 		//create a new Contact
-		final DAOContact lDAOContact = new DAOContact();
+		//final DAOContact lDAOContact = new DAOContact();
+		ContactService cs = new ContactService();
 		
-		final String lError = lDAOContact.createContact(id, firstName, lastName, email);
+		final String lError = cs.addContact(id, firstName, lastName, email);
 		
 		if(lError == null) {
 			//if no exception is raised, forward "success"

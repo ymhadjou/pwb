@@ -12,6 +12,7 @@ import org.lip6.struts.actionForm.AddGroupValidationForm;
 import org.lip6.struts.actionForm.AddTelephoneValidationForm;
 import org.lip6.struts.domain.DAOGroupe;
 import org.lip6.struts.domain.DAOTelephone;
+import org.lip6.struts.services.GroupeService;
 
 /**
  * Servlet implementation class AddGroupeAction
@@ -28,9 +29,9 @@ public class AddGroupeAction extends Action {
 		final String nomGroupe = lForm.getNomGroupe();
 
 		//create a new Contact
-		final DAOGroupe lDAOContact = new DAOGroupe();
+		final GroupeService cs = new GroupeService();
 		
-		final String lError = lDAOContact.CreateGroupDAO(nomGroupe);
+		final String lError = cs.addGroup(nomGroupe);
 		
 		if(lError == null) {
 			//if no exception is raised, forward "success"

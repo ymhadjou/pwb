@@ -12,6 +12,7 @@ import org.lip6.struts.actionForm.DeleteContactValidationForm;
 import org.lip6.struts.actionForm.DeletePhoneValidationForm;
 import org.lip6.struts.domain.DAOContact;
 import org.lip6.struts.domain.DAOTelephone;
+import org.lip6.struts.services.PhoneService;
 
 /**
  * Servlet implementation class DeletePhoneAction
@@ -28,9 +29,9 @@ public class DeletePhoneAction extends Action {
 
 			
 			//create a new Contact
-			final DAOTelephone lDAOContact = new DAOTelephone();
+			final PhoneService cs = new PhoneService();
 			
-			final String lError = lDAOContact.DeletePhoneDAO(id);
+			final String lError = cs.deletePhone(id);
 			
 			if(lError == null) {
 				//if no exception is raised, forward "success"

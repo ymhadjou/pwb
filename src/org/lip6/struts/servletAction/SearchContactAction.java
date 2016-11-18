@@ -12,6 +12,7 @@ import org.lip6.struts.actionForm.SearchAddressValidationForm;
 import org.lip6.struts.actionForm.SearchContactValidationForm;
 import org.lip6.struts.domain.DAOAddress;
 import org.lip6.struts.domain.DAOContact;
+import org.lip6.struts.services.ContactService;
 
 /**
  * Servlet implementation class SearchContactAction
@@ -27,10 +28,9 @@ public class SearchContactAction extends Action {
 
 			
 			//create a new Contact
-			final DAOContact lDAOContact = new DAOContact();
+			ContactService cs = new ContactService();
 			
-			final String lError = lDAOContact.researchContact(id)
-;			
+			final String lError = cs.researchContact(id);			
 			if(lError == null) {
 				//if no exception is raised, forward "success"
 				return pMapping.findForward("success");

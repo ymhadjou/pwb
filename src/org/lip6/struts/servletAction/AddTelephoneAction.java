@@ -9,6 +9,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.lip6.struts.actionForm.AddTelephoneValidationForm;
 import org.lip6.struts.domain.DAOTelephone;
+import org.lip6.struts.services.PhoneService;
 
 /**
  * Servlet implementation class AddTelephoneAction
@@ -26,9 +27,9 @@ public class AddTelephoneAction extends Action {
 		final String numTel = lForm.getNumTelephone();
 
 		//create a new Contact
-		final DAOTelephone lDAOContact = new DAOTelephone();
+		final PhoneService cs = new PhoneService();
 		
-		final String lError = lDAOContact.CreatePhoneDAO(typeTel, numTel, id);
+		final String lError = cs.addPhone(typeTel, numTel, id);
 		
 		if(lError == null) {
 			//if no exception is raised, forward "success"
