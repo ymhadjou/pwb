@@ -1,6 +1,7 @@
 package org.lip6.struts.actionForm;
 
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
@@ -15,6 +16,13 @@ public class AddContactValidationForm extends ActionForm {
 	private String firstName=null;
 	private String lastName=null;
 	private String email=null;
+	private int idAdresse;
+	public int getIdAdresse() {
+		return idAdresse;
+	}
+	public void setIdAdresse(int idAdresse) {
+		this.idAdresse = idAdresse;
+	}
 	/**
 	* @return Email
 	*/
@@ -75,7 +83,7 @@ public class AddContactValidationForm extends ActionForm {
 	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request ) {
 		
 		ActionErrors errors = new ActionErrors();
-		
+		System.out.println("validationForm  : "+idAdresse);
 		if( getFirstName()== null || getFirstName().length() < 1 ) 
 		{
 			errors.add("first name",new ActionMessage("creation.fn.error.required"));

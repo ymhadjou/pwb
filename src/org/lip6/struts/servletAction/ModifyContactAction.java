@@ -30,11 +30,12 @@ public class ModifyContactAction extends Action {
 				final String firstName = lForm.getFirstName();
 				final String lastName = lForm.getLastName();
 				final String email = lForm.getEmail();
+				final int idAdresse = lForm.getIdAdresse();
 				
 				//create a new Contact
 				ContactService cs = new ContactService();
 				
-				final String lError = cs.modifyContact(id, lastName, firstName, email);
+				final String lError = cs.modifyContact(id, lastName, firstName, email,idAdresse);
 				
 				if(lError == null) {
 				//if no exception is raised, forward "success"

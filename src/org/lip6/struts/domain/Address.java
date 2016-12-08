@@ -9,7 +9,7 @@ public class Address {
 	private String zip;
 	
 	
-	public Address(int id, String street, String city, String country,String zip) {
+	public Address(int id,String street, String city, String country,String zip) {
 		this.id = id;
 		this.street = street;
 		this.city = city;
@@ -55,6 +55,11 @@ public class Address {
 
 	public void setId(int l) {
 	id = l;
+	}
+	
+	public String toString()
+	{
+		return "("+id+")"+street +","+city+","+zip+","+country;
 	}
 
 }

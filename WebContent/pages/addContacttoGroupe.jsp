@@ -11,17 +11,17 @@ pageEncoding="ISO-8859-1"%>
 
 <div class="col-md-6">
 	<div class="panel panel-info">
-		<div class="panel-heading"><bean:message key="addmoreinfo.page.add.info"/></div>
+		<div class="panel-heading"><bean:message key="form.add.groupContact"/></div>
 		<div class="panel-body">
 		<div class="form-group">
-		    <label for="ida">ID du contact</label>
+		    <label for="ida"><bean:message key="form.id.contact"/></label>
 		    <input type="text" class="form-control" id="ida" placeholder="id" name="id">
 		  </div>
 		  <div class="form-group">
-		    <label for="idGroupe">ID du groupe</label>
+		    <label for="idGroupe"><bean:message key="form.group"/></label>
 		    <input type="text" class="form-control" id="idGroupe" placeholder="idGroupe" name="idGroupe">
 		  </div>
-		  <button type="submit" class="btn btn-default">Submit</button>
+		  <button type="submit" class="btn btn-default"><bean:message key="form.submit"/></button>
 		</div>
 	</div>
 	</div>

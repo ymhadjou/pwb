@@ -33,7 +33,6 @@ public class AddAddressAction extends Action {
 		
 		final AddAddressValidationForm lForm=(AddAddressValidationForm)pForm;
 		
-		final int id = lForm.getId();
 		final String street = lForm.getStreet();
 		final String city = lForm.getCity();
 		final String zip = lForm.getZip();
@@ -42,7 +41,7 @@ public class AddAddressAction extends Action {
 		//create a new Contact
 		final AdresseService cs = new AdresseService();
 		
-		final String lError = cs.addAdress(street, city, zip, country, id);
+		final String lError = cs.addAdress(street, city, zip, country);
 		
 		if(lError == null) {
 			//if no exception is raised, forward "success"

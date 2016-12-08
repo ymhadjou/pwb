@@ -12,22 +12,22 @@ pageEncoding="ISO-8859-1"%>
 
 <div class="col-md-6">
 	<div class="panel panel-info">
-		<div class="panel-heading"><bean:message key="addmoreinfo.page.add.info"/></div>
+		<div class="panel-heading"><bean:message key="form.add.phone"/></div>
 		<div class="panel-body">
 		<div class="form-group">
-		    <label for="ida">ID</label>
+		    <label for="ida"><bean:message key="form.id.contact"/></label>
 		    <input type="text" class="form-control" id="ida" placeholder="id" name="id">
 		  </div>
 		  <div class="form-group">
-		    <label for="typeTelephone">Type de Telephone</label>
+		    <label for="typeTelephone"><bean:message key="form.typePhone"/></label>
 		    <input type="text" class="form-control" id="typeTelephone" placeholder="typeTelephone" name="typeTelephone">
 		  </div>
 		  <div class="form-group">
-		    <label for="numeroTelephone">Numero de Telephone</label>
+		    <label for="numeroTelephone"><bean:message key="form.phone"/></label>
 		    <input type="text" class="form-control" id="numeroTelephone" placeholder="numeroTelephone" name="numTelephone">
 		  </div>
 		  <div class="form-group">
-		  <button type="submit" class="btn btn-default">Submit</button>
+		  <button type="submit" class="btn btn-default"><bean:message key="form.submit"/></button>
 		</div>
 	</div>
 	</div>

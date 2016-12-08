@@ -12,14 +12,14 @@ pageEncoding="ISO-8859-1"%>
 									<!-- AJOUT ADRESS A UN CONTACT	 -->
 <div class="col-md-6">
 	<div class="panel panel-info">
-		<div class="panel-heading"><bean:message key="addmoreinfo.page.add.info"/></div>
+		<div class="panel-heading"><bean:message key="form.add.group"/></div>
 		<div class="panel-body">
 		<div class="form-group">
-		    <label for="nomGroupe">Nom du groupe</label>
+		    <label for="nomGroupe"><bean:message key="form.group"/></label>
 		    <input type="text" class="form-control" id="nomGroupe" placeholder="nomGroupe" name="nomGroupe">
 		  </div>
 		  <div class="form-group">
-		  <button type="submit" class="btn btn-default">Submit</button>
+		  <button type="submit" class="btn btn-default"><bean:message key="form.submit"/></button>
 		</div>
 	</div>
 	</div>

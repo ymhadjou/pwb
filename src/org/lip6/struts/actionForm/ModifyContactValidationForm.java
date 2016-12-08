@@ -18,6 +18,13 @@ public class ModifyContactValidationForm extends ActionForm {
 	private String firstName=null;
 	private String lastName=null;
 	private String email=null;
+	private int idAdresse = 0;
+	public int getIdAdresse() {
+		return idAdresse;
+	}
+	public void setIdAdresse(int idAdresse) {
+		this.idAdresse = idAdresse;
+	}
 	/**
 	* @return Email
 	*/
