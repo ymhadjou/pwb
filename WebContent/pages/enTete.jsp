@@ -22,7 +22,7 @@ pageEncoding="ISO-8859-1"%>
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	        <li><a href="pages/main.jsp"><bean:message key="main.page.accueil"/></span></a></li>
-	        <li><a href="../creationContact.jsp"><bean:message key="menu.add.contact"/></a></li>  
+	        <li><a href="../ContactCreation.do"><bean:message key="menu.add.contact"/></a></li>  
 	        <li><a href="../AddGroupe.do"><bean:message key="menu.add.group"/></a></li>       
 	         
 	         <li class="dropdown">
@@ -37,7 +37,7 @@ pageEncoding="ISO-8859-1"%>
            <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><bean:message key="menu.delete"/><span class="caret"></span></a>
 	          <ul class="dropdown-menu">
-	            <li><a href="./DeleteContact.do"><bean:message key="menu.delete.contact"/></a></li>
+	            <li><a href="../DeleteContact.do"><bean:message key="menu.delete.contact"/></a></li>
 	            <li><a href="../DeleteGroup.do"><bean:message key="menu.delete.group"/></a></li>
 	            <li><a href="../DeleteContactFromGroup.do"><bean:message key="menu.delete.contactfromgroup"/></a></li>
 	            <li><a href="../DeletePhone.do"><bean:message key="menu.delete.phone"/></a></li>

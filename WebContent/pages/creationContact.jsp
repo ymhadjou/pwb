@@ -38,7 +38,7 @@ pageEncoding="ISO-8859-1"%>
 		  
 		  <div class="form-group">
 		  <label for="adresse">Adresse</label>
-			  <select name="idAdresse">
+			  <select name="idAdresse" class="form-control">
 			  <option value="0">Aucune adresse</option>
 				<% for (Address adress : adresses)
 					{ %>		

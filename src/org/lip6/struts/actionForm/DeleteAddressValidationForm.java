@@ -32,7 +32,7 @@ private static final long serialVersionUID = 1L;
 		
 		if( getId()== 0 || getId() < 1 ) 
 		{
-			errors.add("id",new ActionMessage("creation.id.error.required"));
+			errors.add("idAdresse",new ActionMessage("delete.idadresse.error.required"));
 		}
 
 		return errors;

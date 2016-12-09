@@ -15,7 +15,7 @@ pageEncoding="ISO-8859-1"%>
 		<div class="panel-heading"><bean:message key="form.add.group"/></div>
 		<div class="panel-body">
 		<div class="form-group">
-		    <label for="nomGroupe"><bean:message key="form.group"/></label>
+		    <label for="nomGroupe"><bean:message key="form.group.nom"/></label>
 		    <input type="text" class="form-control" id="nomGroupe" placeholder="nomGroupe" name="nomGroupe">
 		  </div>
 		  <div class="form-group">

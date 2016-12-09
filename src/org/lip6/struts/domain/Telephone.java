@@ -6,7 +6,9 @@ public class Telephone {
 	private String typeTelephone;
 	private String numTelephone;
 	
-	
+	//affichage
+	private String nom;
+	private String prenom;
 	
 	public Telephone(int id, String typeTelephone, String numTelephone) {
 		this.id = id;
@@ -14,6 +16,14 @@ public class Telephone {
 		this.numTelephone = numTelephone;
 	}
 	
+	public Telephone(int idTelephone, String nom, String prenom, String num) {
+		// TODO Auto-generated constructor stub
+		this.id = idTelephone;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.numTelephone = num;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -31,6 +41,11 @@ public class Telephone {
 	}
 	public void setNumTelephone(String numTelephone) {
 		this.numTelephone = numTelephone;
+	}
+	
+	public String toString()
+	{
+		return "["+id+"] " + nom + " " + prenom +" " + numTelephone;
 	}
 	
 	

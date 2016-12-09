@@ -140,6 +140,7 @@ public class DAOAddress {
 		String user ="root";
 		String password ="";
 		String requete="";
+		String requetecontact ="";
 		Connection cx = null;
 		Statement stmt = null;
 			try
@@ -150,6 +151,9 @@ public class DAOAddress {
 				
 				//Statement
 				 stmt = cx.createStatement();
+				 requetecontact = "UPDATE Contact SET fk_idAdresse=0 where fk_idAdresse='" + id + "'";
+				 int nb1 = stmt.executeUpdate(requetecontact);
+				 System.out.println("Nombre de lignes contact modifié à 0 = " + nb1);
 				 requete = "DELETE FROM Adresse WHERE id = '" + id + "'";
 				 int nb = stmt.executeUpdate(requete);
 				 System.out.println("Nombre de lignes supprimées = " + nb);

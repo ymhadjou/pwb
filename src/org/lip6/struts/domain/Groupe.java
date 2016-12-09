@@ -5,7 +5,22 @@ import java.util.List;
 public class Groupe {
 	
 	private String nomGroupe;
+	private int idGroupe;
 	private List <Contact>contacts;
+	
+	public Groupe(int id,String nomGroupe)
+	{
+		this.idGroupe = id;
+		this.nomGroupe = nomGroupe;
+	}
+
+	public int getIdGroupe() {
+		return idGroupe;
+	}
+
+	public void setIdGroupe(int idGroupe) {
+		this.idGroupe = idGroupe;
+	}
 
 	public String getNomGroupe() {
 		return nomGroupe;
@@ -21,6 +36,12 @@ public class Groupe {
 
 	public void setContacts(List<Contact> contacts) {
 		this.contacts = contacts;
+	}
+	
+	public String toString()
+	{
+		return "( "+idGroupe+ ") "+nomGroupe;
+		
 	}
 	
 

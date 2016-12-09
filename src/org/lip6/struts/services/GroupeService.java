@@ -1,6 +1,10 @@
 package org.lip6.struts.services;
 
+import java.util.ArrayList;
+
+import org.lip6.struts.domain.Contact;
 import org.lip6.struts.domain.DAOGroupe;
+import org.lip6.struts.domain.Groupe;
 
 public class GroupeService {
 	
@@ -34,6 +38,11 @@ public class GroupeService {
 	public String deleteContactFromGroup (int idContact, int idGroupe)
 	{
 		return dao.DeleteContactFromGroupDAO(idContact, idGroupe);
+	}
+	
+	public ArrayList<Groupe> listeGroupes()
+	{
+		return dao.getAllGroups();
 	}
 	
 	

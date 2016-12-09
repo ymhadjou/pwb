@@ -221,5 +221,52 @@ public class DAOContact {
 		return liste;
 		
 	}
-
+	
+	public ArrayList<Contact> listContactsWithPhone(){
+		ArrayList<Contact> liste = new ArrayList<Contact>();
+		String driver = "com.mysql.jdbc.Driver";
+		String url = "jdbc:mysql://localhost:3306/gestioncontact";
+		String uid = "root"; String passwd = "";
+		String requete;
+		Connection cx = null;
+		Statement stmt = null;
+		
+		try
+		{
+			Class.forName(driver);
+			cx = DriverManager.getConnection(url, uid, passwd);
+			stmt = cx.createStatement();
+			requete = "select c.id, nom, prenom from contact c, telephone where fk_idContact_telephone = c.id ";
+			ResultSet rs = stmt.executeQuery(requete);
+			
+				while(rs.next())
+				{
+					int id = rs.getInt("id");
+					String lastName = rs.getString("nom");
+					String firstName = rs.getString("prenom");
+					
+					liste.add(new Contact(id, lastName, firstName));
+				}
+			} catch (ClassNotFoundException e) {
+				
+				// classe du pilote introuvable
+				
+			} catch (SQLException e) {
+				
+				System.out.println(e.toString());
+				
+			} finally {
+			try { 
+				if (stmt != null) stmt.close();
+				if (cx != null) cx.close();}
+			catch (SQLException e) { e.printStackTrace(); }
+			}
+		
+		
+		return liste;
+		
+	}
+	
 }
+
+

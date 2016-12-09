@@ -44,9 +44,7 @@
 		<action path="/ModifyPhone" forward="/pages/modifyPhone.jsp"/>
 		<action path="/ModifyGroup" forward="/pages/modifyGroup.jsp"/>
 		<action path="/ModifyContact" forward="/pages/modifyContact.jsp"/>
-		
-		
-		
+
 		
 		<action path="/AddContact"
 		type="org.lip6.struts.servletAction.AddContactAction"

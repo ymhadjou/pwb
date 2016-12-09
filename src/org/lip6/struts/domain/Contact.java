@@ -16,6 +16,13 @@ public class Contact {
 		this.idAdresse = idAdresse;
 	}
 	
+	public Contact(int id2, String lastName2, String firstName2) {
+		// TODO Auto-generated constructor stub
+		this.id=id2;
+		this.firstName = firstName2;
+		this.lastName = lastName2;
+	}
+
 	public int getIdAdresse() {
 		return idAdresse;
 	}
@@ -63,7 +70,7 @@ public class Contact {
 	
 	public String toString()
 	{
-		return "_( "+id+ ") "+firstName+" "+ lastName+" " + email;
+		return "["+id+ "] "+firstName+" "+ lastName;
 		
 	}
 }

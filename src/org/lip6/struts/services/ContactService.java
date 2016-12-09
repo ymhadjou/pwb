@@ -44,5 +44,10 @@ public class ContactService {
 	{
 		return dao.listContacts();
 	}
+	
+	public ArrayList<Contact> listeContactsWithPhone()
+	{
+		return dao.listContactsWithPhone();
+	}
 
 }
